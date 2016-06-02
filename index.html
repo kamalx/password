@@ -9,7 +9,11 @@ body {
 	flex-flow: column;
 	align-items: center;
 }
-
+input {
+  min-height: 1.4rem;
+  padding: 0 0.4rem;
+  font-weight: bold;
+}
 #hash-word {
 	font-family: monospace;
 }
@@ -24,7 +28,10 @@ fieldset {
 
 legend {
 	background: #eee;
-	padding: 1px;
+	padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 2px;
 }
 
 fieldset .buttons {
@@ -47,6 +54,27 @@ fieldset.size > ul {
 	-moz-columns: 2;
 	columns: 2;
 }
+
+p button {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: white;
+}
+
+button {
+  font-weight: bold;
+  cursor: pointer;
+  min-height: 1.4rem;
+}
+
+hr.dashed {
+  height: 0;
+  background: transparent none;
+  border: 0 none;
+  border-bottom: 1px dashed #999;
+}
 </style>
 
 <form>
@@ -66,8 +94,9 @@ fieldset.size > ul {
 			<button type=button onclick='generatePassword(26)'>Long</button>
 		</div>
 	</fieldset>
-	<details>
-		<summary>More Options</summary>
+  <hr class="dashed">
+	<div>
+		<p>More Options</p>
 		<p><button type=button onclick='generatePassword(8)'>Unsafe 8 Character</button></p>
 		<p><button type=button onclick='generateCustomPassword()'>Generate Custom</button></p>
 		<fieldset>
@@ -102,7 +131,7 @@ fieldset.size > ul {
 				<li><label><input type=radio name=size value=26> 26</label></li>
 			</ul>
 		</fieldset>
-	</details>
+	</div>
 </form>
 
 <script>
